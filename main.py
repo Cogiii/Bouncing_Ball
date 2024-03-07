@@ -36,7 +36,7 @@ class Ball:
         self.id = canvas.create_oval(0, 0, 35, 35, fill=color)
         
         # Load the original image
-        self.image = PhotoImage(file='Bouncing_Ball/mapua.png')
+        self.image = PhotoImage(file='mapua.png')
 
         # Resize the image to the desired dimensions
         self.resized_image = self.image.subsample(1, 1)  # Adjust the factors for your desired size
