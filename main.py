@@ -22,12 +22,6 @@ class Points:
                 return True
         return False
 
-
-
-class Ball:
-    from tkinter import PhotoImage
-import random
-
 class Ball:
     def __init__(self, canvas, color, paddle, points):
         self.canvas = canvas
