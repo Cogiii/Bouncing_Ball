@@ -33,7 +33,7 @@ class Ball:
         self.image = PhotoImage(file='mapua.png')
 
         # Resize the image to the desired dimensions
-        self.resized_image = self.image.subsample(1, 1)  # Adjust the factors for your desired size
+        self.resized_image = self.image.subsample(1, 1)
 
         # Create image on canvas using the resized image
         self.image_id = canvas.create_image(263, 120, image=self.resized_image, anchor='center')
@@ -64,8 +64,6 @@ class Ball:
             self.x = -speed
         if self.hit_paddle(pos):
             self.y = -speed
-        if self.hit_points(pos):
-            pass
 
     def hit_paddle(self, pos):
         paddle_pos = self.canvas.coords(self.paddle.rect)
@@ -73,18 +71,9 @@ class Ball:
             if pos[3] >= paddle_pos[1] and pos[3] <= paddle_pos[3]:
                 global score
                 global speed 
-                score = score + 1
-                speed = speed+(score*0.05)
+                score = score + 1x
+                speed = speed+(score*0.01)
 
-                return True
-        return False
-
-    def hit_points(self, pos):
-        points_pos = self.canvas.coords(self.points.id)
-        if pos[2] >= points_pos[0] and pos[0] <= points_pos[2]:
-            if pos[3] >= points_pos[1] and pos[3] <= points_pos[3]:
-                global score
-                score = score + 50
                 return True
         return False
 
